@@ -2,7 +2,7 @@ var express     = require('express');
 var app         = express();
 var mongoose    = require('mongoose');
 
-mongoose.connect('mongodb://DrkSephy:seph1025@novus.modulusmongo.net:27017/yvurOr2y');
+mongoose.connect('mongodb://blank:blank@novus.modulusmongo.net:27017/yvurOr2y');
 
 app.configure(function(){
     app.use(express.static(__dirname + '/public'));
