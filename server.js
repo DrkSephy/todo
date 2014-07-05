@@ -15,5 +15,18 @@ var Todo = mongoose.model('Todo', {
     text: String
 });
 
+// Build the API
+// Get all todos
+app.get('/api/todos', function(req, res){
+    // Use mongoose to get all todos in the database
+    Todo.find(function(err, todos){
+        // If there is an error retrieving, send the error.
+        if (err) 
+            res.send(err)
+
+        res.json(todos); // Return all todos in JSON format
+    });
+});
+
 app.listen(8080);
 console.log("App listening on port 8080");
