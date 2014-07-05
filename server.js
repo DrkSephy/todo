@@ -10,5 +10,10 @@ app.configure(function(){
     app.use(express.bodyParser());                  // pull information from html in POST
 });
 
+// Define our TODO model
+var Todo = mongoose.model('Todo', {
+    text: String
+});
+
 app.listen(8080);
 console.log("App listening on port 8080");
