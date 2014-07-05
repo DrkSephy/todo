@@ -24,4 +24,16 @@ function mainController($scope, $http){
                 console.log('Error: ' + data);
             });
     };
-};
+
+    // Delete a todo after checking it
+    $scope.deleteTodo = function(id){
+        $http.delete('/api/todos/' + id)
+            .success(function(data){
+                $scope.todos = data;
+                console.log(data);
+            })
+            .error(function(data){
+                console.log('Error: ' + data);
+           });
+    };
+}
